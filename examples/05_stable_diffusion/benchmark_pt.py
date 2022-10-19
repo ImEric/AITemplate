@@ -27,10 +27,9 @@ from diffusers import StableDiffusionPipeline
 )
 def run(token, prompt, benchmark):
     pipe = StableDiffusionPipeline.from_pretrained(
-        "CompVis/stable-diffusion-v1-4",
+        "stable-diffusion-v1-4",
         revision="fp16",
-        torch_dtype=torch.float16,
-        use_auth_token=token,
+        torch_dtype=torch.float16
     ).to("cuda")
 
     with torch.autocast("cuda"):

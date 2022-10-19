@@ -35,12 +35,11 @@ def run(token, prompt, benchmark):
 
     # load the pipeline
     device = "cuda"
-    model_id_or_path = "CompVis/stable-diffusion-v1-4"
+    model_id_or_path = "stable-diffusion-v1-4"
     pipe = StableDiffusionImg2ImgAITPipeline.from_pretrained(
         model_id_or_path,
         revision="fp16",
-        torch_dtype=torch.float16,
-        use_auth_token=token,
+        torch_dtype=torch.float16
     )
     pipe = pipe.to(device)
 
