@@ -95,7 +95,7 @@ class StableDiffusionImg2ImgAITPipeline(StableDiffusionImg2ImgPipeline):
             safety_checker=safety_checker,
             feature_extractor=feature_extractor,
         )
-        scheduler = scheduler.set_format("pt")
+
         self.register_modules(
             vae=vae,
             text_encoder=text_encoder,
